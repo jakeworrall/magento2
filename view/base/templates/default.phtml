@@ -135,22 +135,6 @@
                         });
                     }                    
                 }
-                
-                // This is so we can reload the mappings to find the next set of address fields.
-                // NOTE - Monitor Fields and Continual Field Search could potenially remove this.
-                if (pca.magento.checkout) {
-                    pca.magento.checkUrlChange();
-                }
-            };
-
-            pca.magento.checkUrlChange = function() {
-                if (window.location.href != pca.magento.currentUrl) {
-                    pca.magento.currentUrl = window.location.href;
-                    window.setTimeout(pca.magento.loadPCA, 500);
-                }
-                else {
-                    window.setTimeout(pca.magento.checkUrlChange, 1000); 
-                }
             };
 
             // Checks for the dynamic fields are on the page - Means we will need to reload the view to perform the dynamic mapping above.
